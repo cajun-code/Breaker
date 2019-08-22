@@ -2,6 +2,7 @@
 
 ## Steps
 * Create Project
+* set Screen data
 * Create Main Game class
 
 
