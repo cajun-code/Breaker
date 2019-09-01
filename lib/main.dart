@@ -9,6 +9,13 @@ void main() async {
   await flameUtil.fullScreen();
   await flameUtil.setOrientation(DeviceOrientation.portraitUp);
 
+  Flame.images.loadAll(<String>[
+    'ballBlue.png',
+    'paddleRed.png',
+  ]);
+
   //Breaker
+  Breaker game = Breaker();
+  runApp(game.widget);
 }
 

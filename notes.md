@@ -4,6 +4,8 @@
 * Create Project
 * set Screen data
 * Create Main Game class
+* Create the background
+* Register the assets
 
 
 
