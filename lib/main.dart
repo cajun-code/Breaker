@@ -19,8 +19,11 @@ void main() async {
   Breaker game = Breaker();
   runApp(game.widget);
 
-  TapGestureRecognizer tapper = TapGestureRecognizer();
-  tapper.onTapDown = game.onTapDown;
-  flameUtil.addGestureRecognizer(tapper);
+  game.initInput();
+  // horzontal drag handler
+  flameUtil.addGestureRecognizer(game.drag);
+  // tap handler
+  //flameUtil.addGestureRecognizer(game.tapper);
+  
 }
 

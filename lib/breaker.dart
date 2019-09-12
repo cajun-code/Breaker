@@ -4,10 +4,13 @@ import 'package:flame/flame.dart';
 import 'dart:ui';
 import 'package:breaker/components/paddle.dart';
 import 'package:flutter/gestures.dart';
-
+import 'constants.dart';
 class Breaker extends Game{
   Size screenSize;
   Paddle paddle;
+  DragGestureRecognizer drag;
+  TapGestureRecognizer tapper;
+  
   Breaker(){
     initialize();
   }
@@ -15,9 +18,19 @@ class Breaker extends Game{
   void initialize() async {
     resize(await Flame.util.initialDimensions());
     double midpoint = screenSize.width /2;
-    paddle = Paddle(this, midpoint - 50, screenSize.height - 100);
+    paddle = Paddle(this, midpoint - (PADDLE_WIDTH/2), screenSize.height - 100);
+    
   }
-
+  void initInput(){
+    drag = HorizontalDragGestureRecognizer(
+      debugOwner: this.widget,  
+      kind: PointerDeviceKind.touch
+    );
+    drag.onUpdate = this.onDragUpdate;
+    
+    tapper = TapGestureRecognizer();
+    tapper.onTapDown = this.onTapDown;
+  }
   @override
   void render(Canvas canvas) {
     // TODO: implement render
@@ -40,5 +53,9 @@ class Breaker extends Game{
 
   void onTapDown(TapDownDetails td){
     
+  }
+  
+  void onDragUpdate(DragUpdateDetails d){
+    paddle.spriteComponent.x = d.globalPosition.dx;
   }
 }

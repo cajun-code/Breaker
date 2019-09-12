@@ -7,11 +7,18 @@
 * Create the background
 * Register the assets
 * Create the Paddle
-* Add Tap Handler
+* Add Gesture Recognizers
+  * Tap
+  * Drag
+
 
 
 ## Resources
  
+ https://flutter.dev
+ 
+ https://flame-engine.org/
+
  https://github.com/cajun-code/Breaker
 
  https://kenney.nl/assets/puzzle-pack
