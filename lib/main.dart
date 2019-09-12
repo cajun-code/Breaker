@@ -2,6 +2,7 @@ import 'package:flame/util.dart';
 import 'package:flutter/material.dart';
 import 'package:flame/flame.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/gestures.dart';
 import 'breaker.dart';
 
 void main() async {
@@ -17,5 +18,9 @@ void main() async {
   //Breaker
   Breaker game = Breaker();
   runApp(game.widget);
+
+  TapGestureRecognizer tapper = TapGestureRecognizer();
+  tapper.onTapDown = game.onTapDown;
+  flameUtil.addGestureRecognizer(tapper);
 }
 
