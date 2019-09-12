@@ -6,7 +6,7 @@
 * Create Main Game class
 * Create the background
 * Register the assets
-
+* Create the Paddle
 
 
 ## Resources
