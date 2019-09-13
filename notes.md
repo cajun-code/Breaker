@@ -10,6 +10,13 @@
 * Add Gesture Recognizers
   * Tap
   * Drag
+* Create Level
+  * ~~Create walls~~
+  * ~~Create brick pattern~~
+* ~~Create projectile~~
+* ~~Deal with impacts to brick and walls~~
+
+
 
 
 
